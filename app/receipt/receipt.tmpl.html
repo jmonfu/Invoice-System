@@ -1,0 +1,23 @@
+<h3>Receipt</h3>
+<div>
+    <table>
+        <th>ID</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+    </table>
+</div>
+<div ng-controller="receiptCtrl">
+    <div ng-repeat="item in data.receipts">
+        <table>
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.item}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>+/-</td>
+            </tr>
+        </table>
+    </div>
+</div>

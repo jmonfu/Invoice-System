@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    min-height: 100%;
+    padding-left: 10px;
+}
+
+.gridsterItem {
+  background-color: cyan;
+  border-width: 1px;
+  padding: 10px;
+}
+

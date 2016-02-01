@@ -1,71 +1,27 @@
-<!doctype html>
-<html ng-app="invoice">
+<html ng-app="invoicesystem">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Invoice System</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/bootstrap-theme.css" rel="stylesheet" />
+    <link href="styles/angular-gridster.min.css" rel="stylesheet" >
+    <link href="styles/invoicesystem.css" rel="stylesheet" >
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
-  <body ng-controller="MainCtrl as main">
+  <body >
       <h1>Invoice System</h1>
       <hr>
-      <h3>Invoice</h3>
-      <div>
-          <div><h3>IPod</h3></div><div>Quantity: 3</div>
-          <div><h3>IPhone</h3></div><div>Quantity: 24</div>
-          <div><h3>Macbook</h3></div><div>Quantity: 1</div>
-          <div><h3>IPhone Plus</h3></div><div>Quantity: 10</div>
-          <div><h3>Google Glass</h3></div><div>Quantity: 3</div>
-      </div>
-      <div>
-      <h3>Receipt</h3>
-        <div>
-            <table>
-                <th>ID</th>
-                <th>Item</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th></th>
-                <tr>
-                    <td>2345</td>
-                    <td>IPod</td>
-                    <td>75.50</td>
-                    <td>3</td>
-                    <td>+/-</td>
-                </tr>
-                <tr>
-                    <td>2345</td>
-                    <td>IPhone</td>
-                    <td>699.99</td>
-                    <td>1</td>
-                    <td>+/-</td>
-                </tr>
-                <tr>
-                    <td>2345</td>
-                    <td>Macbook Pro</td>
-                    <td>800</td>
-                    <td>1</td>
-                    <td>+/-</td>
-                </tr>
-                <tr>
-                    <td>2345</td>
-                    <td>Google Glass</td>
-                    <td>2,475.50</td>
-                    <td>1</td>
-                    <td>+/-</td>
-                </tr>
-            </table>
+      <div ng-include="'app/invoice/invoice.tmpl.html'"></div>
+      <div ng-include="'app/receipt/receipt.tmpl.html'"></div>
 
-        </div>
-        
-      </div>
       
-      
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="scripts/angular-ui-router.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="app/invoicesystem.js"></script>
+    <script src="app/common/gridster-service.js"></script>
+    <script src="app/invoice/invoice-controller.js"></script>
+    <script src="app/receipt/receipt-controller.js"></script>
+    <script src="scripts/angular-gridster.min.js"></script>
 
   </body>
 </html>
