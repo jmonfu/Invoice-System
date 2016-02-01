@@ -15,9 +15,11 @@ angular.module('invoicesystem')
     
     ctrl.gridsterOpts = Gridster.getOptions();
 
-    $scope.addToBasket = function(id){
-        //add this item to the receipts template
+    $scope.addToBasket = function(item){
+        console.log(item);
         //reduce the quantity of this item
+        item.qty = item.qty-1;
+        //add this item to the receipts template
     };
 
     
