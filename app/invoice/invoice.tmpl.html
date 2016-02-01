@@ -4,6 +4,7 @@
         <ul>
             <li gridster-item="item" ng-repeat="item in ctrl.invoices" class="gridsterItem">
                 <h4>{{item.name}}</h4>Quantity: {{item.qty}}
+                <!--make an ng-if here to disable the button if quantity is zero-->
                 <button type="button" class="btn btn-primary" ng-click="addToBasket(item.id)">Add to Basket</button>
             </li>
         </ul>
