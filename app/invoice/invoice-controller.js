@@ -2,24 +2,20 @@
 
 angular.module('invoicesystem')
 
-    .controller("invoiceCtrl", function($scope, $timeout, Gridster) {
+    .controller("invoiceCtrl", function($scope, $timeout, Gridster, InvoiceService, ReceiptService) {
     var ctrl = this;
+        
+    ctrl.invoices = InvoiceService.getProducts();
 
-    ctrl.invoices = [
-        {id: "2345", name: "IPod", qty: "3", price: "75.50"},
-        {id: "1125", name: "IPhone6", qty: "24", price: "699.99"},
-        {id: "2292", name: "Macbook", qty: "3", price: "800"},
-        {id: "1999", name: "IPhone Plus", qty: "10", price: "800.00"},
-        {id: "7676", name: "Google Glass", qty: "5", price: "2475.50"}
-    ]
-    
-    ctrl.gridsterOpts = Gridster.getOptions();
-
+     ctrl.gridsterOpts = Gridster.getOptions();
+// 
     $scope.addToBasket = function(item){
-        console.log(item);
         //reduce the quantity of this item
         item.qty = item.qty-1;
         //add this item to the receipts template
+        ReceiptService.addToReceipt(item);
+        //if the item does not exist on the receipt, then add a new entry
+        //if it exists, then add to the quantity and 
     };
 
     

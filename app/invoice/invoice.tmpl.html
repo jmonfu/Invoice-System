@@ -3,9 +3,12 @@
     <div gridster="ctrl.gridsterOpts">
         <ul>
             <li gridster-item="item" ng-repeat="item in ctrl.invoices" class="gridsterItem">
-                <h4>{{item.name}}</h4>Quantity: {{item.qty}}
+                <h4>{{item.name}}</h4>
+                <p>Price: € {{item.price}}</p>
+                <p>Stock: {{item.qty}}</p>
                 <!--make an ng-if here to disable the button if quantity is zero-->
-                <button type="button" class="btn btn-primary" ng-click="addToBasket(item)">Add to Basket</button>
+                <button ng-disabled="item.qty <= 0" 
+                type="button" class="btn btn-primary" ng-click="addToBasket(item)">Add to Basket</button>
             </li>
         </ul>
     </div>

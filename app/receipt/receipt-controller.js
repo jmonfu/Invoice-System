@@ -2,14 +2,24 @@
 
 angular.module('invoicesystem')
 
-    .controller("receiptCtrl", function($scope) {
+    .controller("receiptCtrl", function($scope, ReceiptService, InvoiceService) {
+    var ctrl = this;    
+    
+    ctrl.receipts = ReceiptService.getReceiptProducts();
+    
+    $scope.addItem = function(item) {
+        item.qty += 1;
+        item.itemTotal = item.price * item.qty
+    };
 
-    $scope.data = {};
+    $scope.removeItem = function(item) {
+        item.qty = item.qty-1;
+        ReceiptService.removeFromReceipt(item.id);
+        InvoiceService.addStockItem(item);
+    };
+    
+    $scope.total = function() {
+        return ReceiptService.getReceiptTotal();
+    }
 
-    $scope.data.receipts = [
-        {id: "2345", item: "IPod", qty: "3", price: "75.50"},
-        {id: "1125", item: "IPhone6", qty: "1", price: "699.99"},
-        {id: "2292", item: "Macbook", qty: "1", price: "800"},
-        {id: "7676", item: "Google Glass", qty: "1", price: "2475.50"},
-    ]
-})
+});
