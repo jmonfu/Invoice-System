@@ -2,7 +2,7 @@
 
 //this model will be used to populate the products from the API
 angular.module('invoicesystem')
-    .service('InvoiceModel', function ($http, angThirdParty) {
+    .service('InvoiceModel', function ($http) {
     
     var service = this;    
     var invoices = [];
