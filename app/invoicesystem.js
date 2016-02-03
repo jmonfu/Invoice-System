@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('invoicesystem', [
-  'gridster'
+  'gridster',
+ 'angular.third.party.module' 
 ])
 

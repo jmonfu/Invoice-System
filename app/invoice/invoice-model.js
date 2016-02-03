@@ -2,7 +2,7 @@
 
 //this model will be used to populate the products from the API
 angular.module('invoicesystem')
-    .service('InvoiceModel', function ($http) {
+    .service('InvoiceModel', function ($http, angThirdParty) {
     
     var service = this;    
     var invoices = [];
@@ -16,10 +16,8 @@ angular.module('invoicesystem')
     ]
 
     service.getProducts = function() {
-        return invoices;    
+        return invoices;
     }
-    
+});
 
-    //angThirdParty.then(function(currentStockData){
-})
 

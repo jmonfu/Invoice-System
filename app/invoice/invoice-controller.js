@@ -6,7 +6,7 @@ angular.module('invoicesystem')
     var ctrl = this;
         
     ctrl.invoices = InvoiceService.getProducts();
-
+    
      ctrl.gridsterOpts = Gridster.getOptions();
 // 
     $scope.addToBasket = function(item){
